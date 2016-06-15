@@ -286,8 +286,6 @@ function get_post_parent($post) {
 	}
 }
 
-add_filter('show_admin_bar', '__return_true');
-
 //get the image from the blog post
 
 function catch_that_image() {

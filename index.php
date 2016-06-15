@@ -4,7 +4,7 @@
 <div class="main">
   <div class="container container-blog">
 
-    <div class="content">
+    <div class="content" id='content-blog'>
     		<?php get_template_part( 'loop', 'index' );	?>
     </div> <!--/.content -->
 

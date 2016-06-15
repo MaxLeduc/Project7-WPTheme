@@ -15,12 +15,12 @@
 <body <?php body_class(); ?>>
     <?php 
       if(Is_front_page()) {?>
-        <header style="background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php the_post_thumbnail_url('full');?>); background-position:center center; background-size:cover; height:100vh;">
+        <header style="background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php the_post_thumbnail_url('full');?>); background-position:center center; background-size:cover; height:750px;">
       <?php } else if(Is_home()){ ?>
         <?php $saved_post_id = get_option('page_for_posts');?>
-        <header style="background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $saved_post_id ) );?>); background-position:center center; background-size:cover; height:40vh;position:relative;">
+        <header style="background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $saved_post_id ) );?>); background-position:center center; background-size:cover; height:450px;position:relative;">
       <?php } else {?>
-          <header style="background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php the_post_thumbnail_url('full');?>); background-position:center center; background-size:cover; height:40vh;position:relative;">
+          <header style="background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<?php the_post_thumbnail_url('full');?>); background-position:center center; background-size:cover; height:450px;position:relative;">
       <?php } ?>
       <div class="container container-top"> 
     <!-- social media nav -->
