@@ -1,3 +1,73 @@
 footer {
 	clear: both;
+	background:rgba(54, 53, 51, 0.95);
+	padding:50px 0 40px 0;
+	color:white;
+
+	.top-nav{
+		display:flex;
+	}
+
+	.footer-left{
+		width:50%;
+		margin:0 20px;
+
+		.footer-text{
+			color:white;
+		}
+	}
+
+	.footer-left-top{
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+		margin-bottom:10px;
+
+		.fontawesome-text{
+			display:none;	
+		}
+
+		i{
+			margin:0 5px;
+		}
+	}
+
+	.team-info{
+		display:flex;
+		align-items:center;
+
+		img{
+			margin-right:20px;
+		}
+	}
+
+	.footer-right{
+		margin:0 20px;
+
+		h3{
+			margin-top:10px;
+			margin-bottom:20px;
+		}
+	}
+
+	.bottom-nav{
+		display:flex;
+		justify-content:space-between;
+		margin:40px 25px 0 0;
+		margin-left:10px;
+
+		a{
+			color:white;
+			&:hover{
+				color:$yellow;
+			}
+			&:focus{
+				color:$yellow;
+			}
+		}
+
+		li{
+			margin:0 5px;
+		}
+	}
 }

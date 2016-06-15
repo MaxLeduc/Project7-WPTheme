@@ -22,7 +22,9 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'sm_top' => 'Social Media Head Nav',
+		'bottom_footer' => 'Bottom Footer'
 	) );
 
 	/*
@@ -46,7 +48,14 @@ function hackeryou_styles(){
 	wp_enqueue_style('style', get_stylesheet_uri() );
 
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oswald|Work+Sans:400,700');
 }
+
+// function load_fonts() {
+//             wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oswald|Work+Sans:400,700');
+//             wp_enqueue_style( 'googleFonts');
+//         }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
 /* Add all our JavaScript files here.
@@ -276,3 +285,39 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+add_filter('show_admin_bar', '__return_true');
+
+//get the image from the blog post
+
+function catch_that_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches[1][0];
+
+  if(empty($first_img)) {
+    $first_img = "/path/to/default.png";
+  }
+  return $first_img;
+}
+
+//change the length of the excerpt
+
+function new_excerpt_length($length) {
+	return 15;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
+//change the read more of the excerpt
+
+function wpdocs_excerpt_more( $more ) {
+    return sprintf( '<br><br><a class="read-more" href="%1$s">%2$s</a>',
+        get_permalink( get_the_ID() ),
+        __( 'Read More', 'textdomain' )
+    );
+    }
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+

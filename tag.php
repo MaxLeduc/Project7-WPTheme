@@ -4,7 +4,7 @@
   <div class="container">
 
     <div class="content">
-      <h1>Tag Archives: <?php single_tag_title(); ?></h1>
+      <h2 style="text-align:center; margin:20px 0;">Tag Archives: <?php single_tag_title(); ?></h2>
       <?php get_template_part( 'loop', 'tag' ); ?>
     </div> <!-- /.content -->
 

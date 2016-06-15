@@ -1,0 +1,223 @@
+header{
+	.container{
+		position:relative;
+	}
+
+	.container-top{
+		padding-top:30px;
+	}
+
+	.top-sm{
+		display:flex;
+		justify-content:flex-end;
+		background:linear-gradient(125deg, $dark-yellow 349px, rgba(0,0,0,0) 349px, rgba(0,0,0,0) 100%);
+
+	}
+
+	#menu-social-media-head-nav{
+		background:linear-gradient(125deg, rgba(0,0,0,0) 20px, $transparent-grey2 20px, $transparent-grey2 100%);
+		padding-left:20px;
+		padding-top:5px;
+
+		span{
+			display:none;
+		}
+
+		a{
+			color:white;
+			padding:5px;
+			transition:all 0.5 ease;
+			&:hover{
+				color:$yellow;
+				
+			}
+			&:focus{
+				color:$yellow;
+			}
+		}
+	}
+	
+	.main-nav{
+		padding:30px 20px;
+		background:linear-gradient(125deg, $yellow 335px, $transparent-grey2 335px, $transparent-grey2 100%);
+
+		.container{
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			width:100%;
+		}
+
+		li{
+			margin:0 10px;
+			border-bottom:2px solid $yellow;
+		}
+
+		a{
+			color:white;
+			&:hover:not(#logo){
+				color:$yellow;
+			}
+			&:focus:not(#logo){
+				color:$yellow;
+			}
+		}
+	}
+
+	#logo{
+		display:flex;
+		align-items:center;
+		background:$yellow;
+	}
+
+	//hamburger menu
+
+	.hamburger{
+		height:27px;
+		width:30px;
+		position:relative;
+		display:none;
+		// margin-right:75px;
+		top: 140px;
+		right:80px;
+
+		.top-bun{
+		  position:absolute;
+		  width:45px;
+		  height:8px;
+		  top:2px;
+		  left:2px;
+		  margin:0 auto;
+		  background:$yellow;
+		  border-radius:2px;
+		  transition:all 0.5s;
+		}
+
+		.patty{
+		  position:absolute;
+		  width:45px;
+		  height:8px;
+		  top:14px;
+		  left:2px;
+		  margin:0 auto;
+		  background:$yellow;
+		  border-radius:2px;
+		}
+
+		.bottom-bun{
+		  position:absolute;
+		  width:45px;
+		  height:8px;
+		  top:26px;
+		  left:2px;
+		  margin:0 auto;
+		  background:$yellow;
+		  border-radius:2px;
+		  transition:all 0.5s;
+		}
+	}
+
+	.nav ul li{
+		@include font-size(16);
+	}
+	
+	#menu-main-menu.show{
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		position:absolute;
+		text-align:right;
+		top: 190px;
+		right:17px;
+		background:$transparent-grey3;
+		padding:20px;
+		padding-top:60px;
+		margin-top:-70px;
+		text-align:center;
+	}
+
+	.close{
+
+		span.top-bun{
+		  transform:rotate(45deg);
+		  top:12px;
+		}
+
+		span.patty{
+		  display:none;
+		}
+
+		span.bottom-bun{
+		  transform:rotate(-45deg);
+		  top:12px;
+		}
+	}
+
+	.primary-bottom{
+		height:10px;
+		content:'';
+		background:linear-gradient(125deg, $dark-yellow 271px, rgba(0,0,0,0) 271px, rgba(0,0,0,0) 100%);
+	}
+
+	.tag-line{
+		text-align:right;
+		position:absolute;
+		right:0;
+		bottom:-65vh;
+		background:$transparent-grey2;
+		padding:20px;
+
+		h1{
+			
+			color:white;
+			padding:20px 10px;
+			text-transform: uppercase;
+		}
+
+		h3{
+			color:$yellow;
+			margin-bottom: 20px;
+		}
+
+		button{
+			float:right;
+			display:flex;
+			align-item:center;
+			justify-content:center;
+			height:30px;
+			width:120px;
+			background:$yellow;
+			font-weight:bold;
+			border:1px solid $dark-grey;
+			transition:all 0.5s ease;
+			&:hover{
+				background:$dark-grey;
+				color:$yellow;
+				border:1px solid $yellow;
+			}
+			&:focus{
+				background:$dark-grey;
+				color:$yellow;
+				border:1px solid $yellow;
+			}
+
+			i{
+				margin-left:20px;
+			}
+		}
+	}
+
+	.sub-nav{
+		position:absolute;
+		bottom: 0;
+		left: 0;
+		right:0;
+		background:linear-gradient(125deg, rgba(0,0,0,0) 80px, $yellow 80px, $yellow 100%);
+		padding:10px;
+		color:white;
+
+		h6{
+			margin-left:100px;
+		}
+	}
+}

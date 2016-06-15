@@ -7,8 +7,11 @@
 * Author URI: http://hackeryou.com
 */
 
+@import 'reset';
 @import 'normalize';
+@import 'variables';
 @import 'typography';
+@import 'header';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
@@ -24,12 +27,17 @@ img {
 }
 
 body {
-	color: #333;
 }
 
 .container {
 	max-width: 1200px;
-	margin: 0 auto;
+	margin:0 auto;
+	width:90%
+}
+
+.container-bot {
+	max-width: 1200px;
+	margin:0 auto;
 }
 
 .content {
@@ -42,10 +50,378 @@ body {
 	width: 100%;
 }
 
+span.yellow{
+	color:$yellow;
+}
+
+span.dark-grey{
+	color:$dark-grey;
+}
+
+//front page styles
+
+//about team section
+
+.about{
+	margin:70px 0;
+
+	.container{
+		display:flex;
+	}
+}
+
+.about-team{
+	width:calc(50% - 20px);
+	padding:20px;
+
+	h2{
+		border-bottom:1px solid $yellow;
+		line-height:60px;
+		text-transform: uppercase;
+		margin-bottom:10px;
+	}
+
+	.abstract{
+		font-weight:bold;
+	}
+
+	p{
+		line-height:30px;
+		margin-bottom:10px;
+	}
+
+	button{
+		font-weight:bold;
+		color:$yellow;
+		background-color:$dark-grey;
+		height:30px;
+		width:150px;
+		border:1px solid $yellow;
+		transition:all 0.5s ease;
+		&:hover{
+			background:$yellow;
+			color:$dark-grey;
+			border:1px solid $dark-grey;
+		}
+		&:focus{
+			background:$yellow;
+			color:$dark-grey;
+			border:1px solid $dark-grey;
+		}
+	}
+}
+
+.quote-img,
+.stadium-image{
+	margin:0 20px;
+	width:calc(50% - 20px);
+	position:relative;
+}
+
+.quote-img{
+	background:linear-gradient(0deg, $grey, $grey), url('images/team.jpg');
+	background-size:cover;
+	background-position:center center;
+}
+
+.stadium-image{
+	background:linear-gradient(0deg, $grey, $grey), url('images/stadium.jpg');
+	background-size:cover;
+	background-position:center center;
+	}
+
+.quote-img,
+.stadium-image{
+
+	figcaption{
+		position:absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border:2px solid $yellow;
+		margin:20px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		padding:20px;
+	}
+
+	.quote{
+		text-align:center;
+		color:white;
+
+		h3{
+			margin-bottom:10px;
+			text-transform: uppercase;
+			line-height:35px;
+		}
+	}
+}
+
+//our news section
+
+.our-news{
+	text-align:center;
+	background:-webkit-linear-gradient(bottom,  $transparent-grey, $transparent-grey), url('images/ball-field.jpeg');
+	background:-o-linear-gradient(bottom, $transparent-grey, $transparent-grey), url('images/ball-field.jpeg');
+	background:linear-gradient(to top, $transparent-grey, $transparent-grey), url('images/ball-field.jpeg');
+	background-repeat:no-repeat;
+	background-position: 100% 35%;
+	background-size:cover;
+	padding:70px 0;
+
+	h2{
+		text-transform: uppercase;
+		margin-bottom:10px;
+	}
+
+	.news-tag{
+		line-height:30px;
+		margin-bottom:40px;
+		color:#fff;
+	}
+
+	.featured-posts{
+		display:flex;
+	}
+
+	.post{
+		display:flex;
+		background:white;
+		&:hover figcaption{
+			background:rgba(255,199,34, 0.5);
+		}
+	}
+
+	.featured-img{
+		width:300px;
+		height:300px;
+		position:relative;
+
+		figcaption{
+			position:absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			transition:all 0.5s ease;
+		}
+
+		.triangle{
+			border:20px solid white;
+			height:0;
+			width:0;
+			border-top:20px solid transparent;
+			border-left:20px solid transparent;
+			border-bottom:20px solid transparent;
+			position:absolute;
+			top:130px;
+			right: 0;
+		}
+	}
+
+	aside.post-preview{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		margin:0 20px;
+		h6, 
+		p{
+			@include font-size(10);
+			color:$grey;
+			margin-bottom:10px;
+		}
+		
+		h5{
+			margin-bottom:10px;
+		}
+	}
+
+	button{
+		font-weight:bold;
+		color:$dark-grey;
+		background-color:$yellow;
+		height:30px;
+		width:150px;
+		border:1px solid $dark-grey;
+		transition:all 0.5s ease;
+		margin-top:50px;
+		&:hover{
+			background:$dark-grey;
+			color:$yellow;
+			border:1px solid $yellow;
+		}
+		&:focus{
+			background:$dark-grey;
+			color:$yellow;
+			border:1px solid $yellow;
+		}
+	}
+}
+
+//ABOUT PAGE
+
+.about-content{
+	display:flex;
+
+	.about-us{
+		width:50%;
+	}
+
+	.quote-img{
+		width:50%;
+	}
+}
+
+//BLOG PAGE
+
+article.post-loop{
+	margin:20px;
+}
+
+section.entry-content{
+	display:flex;
+	background:white;
+	border:2px solid $yellow;
+	&:hover figcaption{
+		background:rgba(255,199,34, 0.5);
+	}
 
 
+	.featured-img{
+		width:calc(300px);
+		height:300px;
+		position:relative;
 
+		.triangle{
+			border:20px solid white;
+			height:0;
+			width:0;
+			border-top:20px solid transparent;
+			border-left:20px solid transparent;
+			border-bottom:20px solid transparent;
+			position:absolute;
+			top:130px;
+			right: 0;
+		}
 
+		figcaption{
+			position:absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			transition:all 0.5s ease;
+		}
+	}
 
+	aside.post-preview{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		margin:0 20px;
+		width:50%;
+		h6, 
+		p{
+			@include font-size(10);
+			color:$grey;
+			margin-bottom:10px;
+		}
+		
+		h2{
+			margin-bottom:10px;
+		}
 
+		.read-more{
+			color:$dark-grey;
+			background-color:$yellow;
+			padding:3px 10px;
+			border:1px solid $dark-grey;
+			transition:all 0.5s ease;
+			@include font-size(10);
+			&:hover{
+				background:$dark-grey;
+				color:$yellow;
+				border:1px solid $yellow;
+			}
+			&:focus{
+				background:$dark-grey;
+				color:$yellow;
+				border:1px solid $yellow;
+			}
+		}
 
+		.post-foot{
+			margin-top:10px;
+		}
+	}
+}
+
+//blog posts page
+
+.individual-post{
+	margin:20px;
+
+	.post-img{
+	width:100%;
+	height:300px;
+	}
+
+	.post-information{
+		display:flex;
+		justify-content:flex-start;
+		align-items:center;
+		height:40px;
+		color:white;
+		background:linear-gradient(125deg, $dark-grey 97%, rgba(0,0,0,0) 97%, rgba(0,0,0,0) 100%);
+
+		h6{
+			margin:10px;
+			line-height:100px;
+		}
+
+		i{
+			margin:10px;
+		}
+	}
+
+	h2{
+		margin:20px 0;
+	}
+
+	.entry-content{
+		margin-bottom:20px;
+	}
+
+	.entry-utility{
+		margin-bottom:20px;
+	}
+
+	#submit{
+
+			height:30px;
+			width:120px;
+			background:$yellow;
+			font-weight:bold;
+			border:1px solid $dark-grey;
+			transition:all 0.5s ease;
+			margin-top:20px;
+			&:hover{
+				background:$dark-grey;
+				color:$yellow;
+				border:1px solid $yellow;
+			}
+			&:focus{
+				background:$dark-grey;
+				color:$yellow;
+				border:1px solid $yellow;
+			}
+
+			i{
+				margin-left:20px;
+			}
+		}
+}
+
+@import 'queries';

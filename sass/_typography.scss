@@ -1,8 +1,61 @@
+//Fonts family
+
+$oswald: 'Oswald', sans-serif;
+
+$worksans: 'Work Sans', sans-serif;
+
+@mixin font-size($size-value){
+	font-size:$size-value * 1px;
+	font-size:($size-value/10) * 1rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family:$oswald;
+}
+
+p, li{
+	font-family:$worksans;
+}
+
+//font size
+
+body{
+	font-size:62.5%;
+}
+
+h1{
+	@include font-size(32);
+}
+
+h2{
+	@include font-size(22);
+}
+
+h3{
+	@include font-size(16);
+}
+
+h4{
+	@include font-size(14);
+}
+
+h5, p, li{
+	@include font-size(12);
+	color:$dark-grey;
+}
+
+h6{
+	@include font-size(10);
+}
+
+//links
+
 a {
-	color: #BA209B;
+	color:black;
 	text-decoration: none;
+	transition:all 0.5s ease;
 	&:hover {
-		color: #D424B1;
+		color:$yellow;
 	}
 }
 
